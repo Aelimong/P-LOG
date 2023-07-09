@@ -1,3 +1,23 @@
+/* font-family */
+@font-face {
+  font-family: "Migra-Medium";
+  src: url("../fonts/Migra-Medium.woff2");
+}
+
+@font-face {
+  font-family: "PPObjectSans-Medium";
+  src: url("../fonts/PPObjectSans-Medium.woff2");
+}
+
+@font-face {
+  font-family: "PPObjectSans-Heavy";
+  src: url("../fonts/PPObjectSans-Heavy.woff2");
+}
+
+html {
+  font-size: 10px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -13,7 +33,7 @@ a {
 }
 
 header {
-  background-color: rgb(155, 155, 155);
+  background-color: rgba(128, 128, 128, 0.379);
   width: 100%;
   height: 78px;
   z-index: 9999;
@@ -22,7 +42,7 @@ header {
 }
 
 header .container {
-  width: 1200px;
+  /* width: 1200px; */
 }
 
 header .nav {
@@ -35,16 +55,18 @@ header .nav {
 header .nav .menu {
   display: flex;
   height: 100%;
-  background-color: antiquewhite;
   align-items: center;
   margin: 0;
 }
 
 header .nav .menu li {
-  padding: 0 20px;
+  padding: 0 10px;
+  font-size: 1.4rem;
+  font-family: "PPObjectSans-Medium", sans-serif;
 }
 
 header .nav .menu li a {
+  color: #ffffff;
 }
 
 header .nav .buy-btn {
@@ -56,18 +78,159 @@ header .nav .buy-btn {
   cursor: pointer;
   color: #ffffff;
   margin: 0 10px;
+  padding: 1.5rem;
 }
 
 main {
   width: 100%;
 }
 
-section .main-section {
-  background-color: lightcoral;
-  height: 800px;
+/* 메인 섹션 */
+.main-section {
+  background-color: rgb(93, 144, 97);
+  height: 520px;
 }
 
-section .section-1 {
-  background-color: lightblue;
-  height: 800px;
+.main-section div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-section h1 {
+  color: #ffffff;
+  text-align: center;
+}
+
+/* 섹션 1 */
+#section1 {
+  background-color: #f0e9df;
+  padding: 30px 30px 100px 30px;
+  display: flex;
+}
+
+#section1 .sec1-left {
+  width: 60vw;
+  margin-right: 140px;
+}
+
+#section1 .sec1-left-1 {
+  margin-bottom: 170px;
+}
+
+#section1 .sec1-left-1 h2 {
+  font-family: "PPObjectSans-Heavy", sans-serif;
+  margin: 0;
+  font-size: 4.2rem;
+  color: #543939;
+  line-height: 4.4rem;
+}
+
+#section1 .sec1-left-2 {
+  display: flex;
+  align-items: end;
+}
+
+#section1 .sec1-left-2 img {
+  width: 21.7vw;
+  max-width: 600px;
+}
+
+#section1 .sec1-left-2 .sec1-text {
+  margin-left: 30px;
+}
+
+#section1 .sec1-left-2 h4 {
+  font-family: "PPObjectSans-medium", sans-serif;
+  color: #543939;
+  font-size: 1.4rem;
+  margin: 0 0 14px 0;
+  font-weight: 100;
+}
+
+#section1 .sec1-left-2 p {
+  font-family: "Migra-Medium", sans-serif;
+  color: #543939;
+  font-size: 1.6rem;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+#section1 .sec1-right img {
+  width: 30vw;
+}
+
+/* 섹션 2 */
+#section2 {
+  width: 100%;
+  background-color: #ffaa32;
+  padding: 30px 30px 100px 30px;
+}
+
+#section2 .sec2-title {
+  width: 100%;
+  display: flex;
+}
+
+#section2 .sec2-title1 {
+  /* background-color: red; */
+}
+
+#section2 .sec2-title2 {
+  width: 115vw;
+}
+
+#section2 .sec2-title1 h1 {
+  font-family: "PPObjectSans-Heavy", sans-serif;
+  margin: 0;
+  font-size: 6.2rem;
+  color: #543939;
+  line-height: 5rem;
+  letter-spacing: -1px;
+}
+
+#section1 .sec2-title1 a p i {
+  color: #543939;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+#section2 .sec2-title1 a p span {
+  font-family: "PPObjectSans-medium", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 100;
+  color: #543939;
+  border-bottom: dashed 1px #543939;
+}
+
+#section2 .sec2-list {
+  width: 100%;
+  background-color: red;
+}
+
+#section2 .sec2-list .list-top {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: green;
+}
+
+#section2 .sec2-list .list-bottom {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  background-color: blue;
+}
+
+#section2 .sec2-img {
+  width: 30vw;
+  margin: 10px;
+  background-color: grey;
+}
+
+#section2 .sec2-img img {
+  width: 100%;
 }

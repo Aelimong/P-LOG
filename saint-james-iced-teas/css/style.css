@@ -174,6 +174,7 @@ main {
   width: 100%;
   background-color: #f0e9df;
   padding: 30px 30px 100px 30px;
+  box-sizing: border-box;
 }
 
 #section2 .sec2-title {
@@ -233,7 +234,7 @@ main {
 
 #section2 .sec2-img {
   width: 31vw;
-  margin: 15px 0px;
+  margin: 15px 15px;
 }
 
 #section2 .sec2-img img {
@@ -264,6 +265,7 @@ main {
   background-color: rgb(178 149 109);
   padding: 100px 30px;
   display: flex;
+  box-sizing: border-box;
 }
 
 #section3 .sec3-title {
@@ -343,6 +345,7 @@ main {
   width: 100%;
   background-color: #f0e9df;
   padding: 100px 30px;
+  box-sizing: border-box;
 }
 
 #section4 h4 {
@@ -374,6 +377,7 @@ main {
   background-color: #f0e9df;
   padding: 100px 30px;
   display: flex;
+  box-sizing: border-box;
 }
 
 #section5 .sec5-text {
@@ -465,6 +469,7 @@ main {
   width: 100%;
   background-color: #543939;
   padding: 30px;
+  box-sizing: border-box;
 }
 
 #section6 .sec6-top {

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Saint James Iced Teas</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/index.js"></script>
+    <script defer src="./js/index.js"></script>
     <script
       src="https://kit.fontawesome.com/5471a598ea.js"
       crossorigin="anonymous"
@@ -21,7 +21,7 @@
           <li><a href="#">INGREDIENTS</a></li>
           <li><a href="#">FIND A STORE</a></li>
         </ul>
-        <a class="main-logo">
+        <a class="main-logo" href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 203 30"
@@ -71,13 +71,20 @@
             ></path>
           </svg>
         </a>
-        <input class="buy-btn" type="button" value="BUY NOW" />
+        <a href="#" class="nav-btn">
+          <h4>BUY NOW</h4>
+        </a>
       </div>
     </header>
     <main class="container">
-      <section class="main-section">
+      <section id="main-section">
         <div>
           <h1>Main</h1>
+        </div>
+        <div id="tooltip">
+          <div class="circle">
+            <h4>CLICK</h4>
+          </div>
         </div>
       </section>
       <section id="section1">
@@ -122,31 +129,56 @@
           <div class="list-top">
             <div class="sec2-img"></div>
             <div class="sec2-img">
-              <img src="./images/s3.png" alt="passionfruit-peach-tea" />
-              <h4>PASSIONFRUIT & PEACH TEA</h4>
-              <p>Subtly sweet</p>
+              <a href="#">
+                <div class="sec2-img-el">
+                  <h4 class="hover-text">EXPLORE</h4>
+                  <img src="./images/s3.png" alt="passionfruit-peach-tea" />
+                </div>
+                <h4>PASSIONFRUIT & PEACH TEA</h4>
+                <p>Subtly sweet</p>
+              </a>
             </div>
             <div class="sec2-img">
-              <img src="./images/s4.png" alt="passionfruit-peach-tea" />
-              <h4>ORIGINAL GREEN TEA</h4>
-              <p>A clean take on a classic</p>
+              <a href="#">
+                <div class="sec2-img-el">
+                  <h4 class="hover-text">EXPLORE</h4>
+                  <img src="./images/s4.png" alt="passionfruit-peach-tea" />
+                </div>
+                <h4>ORIGINAL GREEN TEA</h4>
+                <p>A clean take on a classic</p>
+              </a>
             </div>
           </div>
           <div class="list-bottom">
             <div class="sec2-img">
-              <img src="./images/s5.png" alt="passionfruit-peach-tea" />
-              <h4>PINEAPPLE & MANGO TEA</h4>
-              <p>Perfectly playful</p>
+              <a href="#">
+                <div class="sec2-img-el">
+                  <h4 class="hover-text">EXPLORE</h4>
+                  <img src="./images/s5.png" alt="passionfruit-peach-tea" />
+                </div>
+                <h4>PINEAPPLE & MANGO TEA</h4>
+                <p>Perfectly playful</p>
+              </a>
             </div>
             <div class="sec2-img">
-              <img src="./images/s6.png" alt="passionfruit-peach-tea" />
-              <h4>BLUEBERRY & RASPBERRY TEA</h4>
-              <p>Cool and refreshing</p>
+              <a href="#">
+                <div class="sec2-img-el">
+                  <h4 class="hover-text">EXPLORE</h4>
+                  <img src="./images/s6.png" alt="passionfruit-peach-tea" />
+                </div>
+                <h4>BLUEBERRY & RASPBERRY TEA</h4>
+                <p>Cool and refreshing</p>
+              </a>
             </div>
             <div class="sec2-img">
-              <img src="./images/s7.png" alt="passionfruit-peach-tea" />
-              <h4>BLOOD ORANGE & HIBISCUS TEA</h4>
-              <p>Crisp and easy</p>
+              <a href="#">
+                <div class="sec2-img-el">
+                  <h4 class="hover-text">EXPLORE</h4>
+                  <img src="./images/s7.png" alt="passionfruit-peach-tea" />
+                </div>
+                <h4>BLOOD ORANGE & HIBISCUS TEA</h4>
+                <p>Crisp and easy</p>
+              </a>
             </div>
           </div>
         </div>
@@ -213,7 +245,7 @@
           <img src="./images/s9.png" alt="pineapples" id="sec5-img2" />
         </div>
       </section>
-      <section id="section6">
+      <section id="footer">
         <div class="sec6-top">
           <ul>
             <li>

@@ -32,8 +32,27 @@ a {
   text-decoration: none;
 }
 
+#tooltip .circle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px #ffffff dashed;
+  transform: translate(-50%, -50%);
+  transition: all 0.01s linear;
+  cursor: default;
+}
+
+#tooltip .circle h4 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 100;
+  font-family: "PPObjectSans-Medium", sans-serif;
+}
 header {
-  background-color: rgba(128, 128, 128, 0.379);
   width: 100%;
   height: 78px;
   z-index: 9999;
@@ -41,15 +60,15 @@ header {
   top: 0;
 }
 
-header .container {
-  /* width: 1200px; */
-}
-
 header .nav {
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0;
+  /* backdrop-filter: blur(25px);
+  background-color: rgba(84, 57, 57, 0.25); */
+  transition: all 0.15s;
 }
 
 header .nav .menu {
@@ -57,9 +76,11 @@ header .nav .menu {
   height: 100%;
   align-items: center;
   margin: 0;
+  padding: 0 0 0 30px;
 }
 
 header .nav .menu li {
+  margin: 0;
   padding: 0 10px;
   font-size: 1.4rem;
   font-family: "PPObjectSans-Medium", sans-serif;
@@ -69,21 +90,38 @@ header .nav .menu li a {
   color: #ffffff;
 }
 
+header .nav .menu li a:hover {
+  opacity: 0.6;
+  transition: all 0.15s;
+}
+
 header .nav .main-logo {
   width: 20.3rem;
   height: 3rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-header .nav .buy-btn {
-  width: 104px;
-  height: 48px;
-  border: 1px solid #ffffff;
-  background-color: transparent;
-  border-radius: 0.375rem;
-  cursor: pointer;
+header .nav a {
   color: #ffffff;
-  margin: 0 10px;
+}
+
+header .nav a h4 {
+  font-size: 1.4rem;
+  font-family: "PPObjectSans-Medium", sans-serif;
+  font-weight: 100;
+  margin: 0;
+  border: 1px solid #ffffff;
   padding: 1.5rem;
+  border-radius: 0.375rem;
+  margin: 0 14px;
+}
+
+header .nav .nav-btn:hover {
+  transition: all 0.15s linear;
+  scale: 1.05;
 }
 
 main {
@@ -91,20 +129,20 @@ main {
 }
 
 /* 메인 섹션 */
-.main-section {
+#main-section {
   background-color: rgb(93, 144, 97);
-  height: 520px;
+  height: 100vh;
+  position: relative;
 }
 
-.main-section div {
-  width: 100%;
-  height: 100%;
+#main-section div {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.main-section h1 {
+#main-section h1 {
+  font-size: 36px;
   color: #ffffff;
   text-align: center;
 }
@@ -214,6 +252,11 @@ main {
   border-bottom: dashed 1px #543939;
 }
 
+#section2 .sec2-title1 a p span:hover {
+  opacity: 0.6;
+  transition: all 0.15s;
+}
+
 #section2 .sec2-list {
   width: 100%;
 }
@@ -241,6 +284,16 @@ main {
   width: 100%;
 }
 
+#section2 .sec2-img .sec2-img-el:hover img {
+  filter: blur(5px);
+  transition: all 0.15s linear;
+}
+
+#section2 .sec2-img .sec2-img-el:hover .hover-text {
+  display: block;
+  transition: all 0.15s;
+}
+
 #section2 .sec2-img h4 {
   font-family: "PPObjectSans-medium", sans-serif;
   font-size: 1.4rem;
@@ -257,6 +310,26 @@ main {
   color: #543939;
   font-weight: 100;
   margin: 0;
+}
+
+#section2 .sec2-img .sec2-img-el {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center; */
+  position: relative;
+}
+
+#section2 .sec2-img .hover-text {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  position: absolute;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
 }
 
 /* 섹션3 */
@@ -338,6 +411,11 @@ main {
   color: #ffffff;
   border-bottom: dashed 1px #ffffff;
   text-align: right;
+}
+
+#section3 .sec3-more a p span:hover {
+  opacity: 0.6;
+  transition: all 0.15s;
 }
 
 /* 섹션4 */
@@ -443,7 +521,10 @@ main {
   font-weight: 100;
   color: #543939;
   border-bottom: dashed 1px #543939;
-  text-align: right;
+}
+#section5 .sec5-text .sec5-text-bottom a p span:hover {
+  opacity: 0.6;
+  transition: all 0.15s;
 }
 
 #section5 .sec5-img {
@@ -465,30 +546,30 @@ main {
 }
 
 /* 섹션6 */
-#section6 {
+#footer {
   width: 100%;
   background-color: #543939;
   padding: 30px;
   box-sizing: border-box;
 }
 
-#section6 .sec6-top {
+#footer .sec6-top {
   width: 100%;
   display: flex;
   justify-content: center;
   height: 100px;
 }
 
-#section6 .sec6-top ul {
+#footer .sec6-top ul {
   display: flex;
   padding: 0;
 }
 
-#section6 .sec6-top ul li {
+#footer .sec6-top ul li {
   margin: 0 6px;
 }
 
-#section6 .sec6-top ul li h4 {
+#footer .sec6-top ul li h4 {
   font-family: "PPObjectSans-medium", sans-serif;
   font-size: 1.4rem;
   text-align: center;
@@ -497,11 +578,16 @@ main {
   margin: 0;
 }
 
-#section6 .sec6-top ul li h4 a {
+#footer .sec6-top ul li h4 a {
   color: #ffffff;
 }
 
-#section6 .sec6-middle {
+#footer .sec6-top ul li h4 a:hover {
+  opacity: 0.6;
+  transition: all 0.15s;
+}
+
+#footer .sec6-middle {
   width: 26vw;
   display: flex;
   justify-content: center;
@@ -510,7 +596,7 @@ main {
   padding-bottom: 30px;
 }
 
-#section6 .sec6-middle h4 {
+#footer .sec6-middle h4 {
   font-family: "PPObjectSans-medium", sans-serif;
   font-size: 1.4rem;
   text-align: center;
@@ -520,7 +606,7 @@ main {
   margin: 0;
 }
 
-#section6 .sec6-middle p {
+#footer .sec6-middle p {
   font-family: "Migra-Medium", sans-serif;
   font-size: 1.6rem;
   text-align: center;
@@ -530,7 +616,7 @@ main {
   margin: 0;
 }
 
-#section6 .sec6-input {
+#footer .sec6-input {
   display: inline-flex;
   position: relative;
   left: 50%;
@@ -540,13 +626,13 @@ main {
   margin-bottom: 100px;
 }
 
-#section6 .sec6-input input {
+#footer .sec6-input input {
   background-color: transparent;
   border: 0;
   width: 23vw;
 }
 
-#section6 .sec6-input button {
+#footer .sec6-input button {
   font-family: "PPObjectSans-medium", sans-serif;
   background-color: transparent;
   border: 0;

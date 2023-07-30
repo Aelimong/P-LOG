@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.slide-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  /* overflow: hidden; */
+}
+
+.slides {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* 바뀌는 과정이 보이도록 움직이게 하는 효과 */
+.slides.animated {
+  transition: 0.5s ease-out;
+}
+
+.slides li {
+  width: 30vw;
+  float: left;
+}
+
+.slides li img {
+  width: 100%;
+}
+
+.slides li:not(:last-child) {
+  margin-right: 5vw;
+}

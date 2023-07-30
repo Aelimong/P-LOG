@@ -77,51 +77,38 @@
       </div>
     </header>
     <main class="container">
-      <section id="main-section" onclick="slideMainImages();">
+      <section id="main-section">
         <!-- 메인화면 왼쪽 텍스트 z-index -->
         <div class="main-text">
-          <h1>
-            ORIGINAL GREEN TEA<br />
-            <span class="grey-text">A CLEAN TAKE ON A CLASSIC</span>
-          </h1>
+          <div class="main-title">
+            <h1 class="white-text">ORIGINAL GREEN TEA</h1>
+            <h1 class="grey-text">A CLEAN TAKE ON A CLASSIC</h1>
+          </div>
+          <div class="main-more">
+            <a href="#">
+              <p><i class="fa-solid fa-arrow-right"></i><span>EXPLORE</span></p>
+            </a>
+          </div>
         </div>
         <!-- 메인화면 오른쪽 슬라이드 영역 -->
-        <div id="main-slide">
-          <img
-            class="slides slide-img1"
-            style="background-color: lightcoral"
-            src="./images/s3.png"
-            alt="tea1"
-          />
-          <img
-            class="slides slide-img2"
-            style="background-color: lightsalmon"
-            src="./images/s4.png"
-            alt="tea1"
-          />
-          <img
-            class="slides slide-img3"
-            style="background-color: lightgoldenrodyellow"
-            src="./images/s5.png"
-            alt="tea1"
-          />
-          <img
-            class="slides slide-img4"
-            style="background-color: lightgreen"
-            src="./images/s6.png"
-            alt="tea1"
-          />
-          <img
-            class="slides slide-img5"
-            style="background-color: lightseagreen"
-            src="./images/s7.png"
-            alt="tea1"
-          />
-        </div>
-        <div id="tooltip">
-          <div class="circle">
-            <h4>CLICK</h4>
-          </div>
+        <div class="slide-wrapper">
+          <ul class="slides">
+            <li>
+              <img src="./images/s4.png" />
+            </li>
+            <li>
+              <img src="./images/s3.png" />
+            </li>
+            <li>
+              <img src="./images/s5.png" />
+            </li>
+            <li>
+              <img src="./images/s6.png" />
+            </li>
+            <li>
+              <img src="./images/s7.png" />
+            </li>
+          </ul>
         </div>
       </section>
       <section id="section1">

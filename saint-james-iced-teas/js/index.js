@@ -1,4 +1,6 @@
-let mainSecHeight = document.querySelector("#main-section").clientHeight;
+let mainSection = document.querySelector("#main-section");
+
+let mainSecHeight = mainSection.clientHeight;
 let nav = document.querySelector(".nav");
 let navHeight = nav.clientHeight;
 
@@ -17,37 +19,39 @@ document.addEventListener("scroll", () => {
   }
 });
 
-// let circle = document.querySelector(".circle");
+// 마우스 커서 따라다니기
 
-// document.addEventListener("mousemove", (e) => {
-//   //마우스 좌표
-//   const mouseX = e.clientX;
-//   const mouseY = e.clientY;
-//   circle.style.left = mouseX + "px";
-//   circle.style.top = mouseY + "px";
+let circle = document.querySelector(".circle");
 
-//   // 마우스 브라우저 기준 Y 좌표
-//   let pageY = e.pageY;
+mainSection.addEventListener("mousemove", (e) => {
+  //마우스 좌표
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+  circle.style.left = mouseX + "px";
+  circle.style.top = mouseY + "px";
 
-//   //1. 써클 div 만들고
-//   const circleDiv = document.createElement("div");
-//   circleDiv.classList.add("circle");
-//   circleDiv.innerText = "CLICK";
+  // 마우스 브라우저 기준 Y 좌표
+  let pageY = e.pageY;
 
-//   // 2. append를 한 번만...??
-//   let slideWrapper = document.querySelector(".slide-wrapper");
-//   slideWrapper.appendChild(circleDiv);
-//   //console.log(pageY); //계
-//   //console.log(navHeight); //78
+  //1. 써클 div 만들고
+  const circleDiv = document.createElement("div");
+  circleDiv.classList.add("circle");
+  circleDiv.innerText = "CLICK";
 
-//   //메인 섹션 안에서만 보이고
-//   if (pageY >= navHeight && pageY <= mainSecHeight) {
-//     circle.style.opacity = "1";
-//   } else {
-//     // circle.style.scale = "1.1";
-//     circle.style.opacity = "0";
-//   }
-// });
+  // 2. append를 한 번만...??
+  let slideWrapper = document.querySelector(".slide-wrapper");
+  slideWrapper.appendChild(circleDiv);
+  //console.log(pageY); //계
+  //console.log(navHeight); //78
+
+  //메인 섹션 안에서만 보이고
+  if (pageY >= navHeight && pageY <= mainSecHeight) {
+    circle.style.opacity = "1";
+  } else {
+    // circle.style.scale = "1.1";
+    circle.style.opacity = "0";
+  }
+});
 
 let slides = document.querySelector(".slides");
 let slide = document.querySelectorAll(".slides li");
@@ -62,7 +66,6 @@ let slideCount = slide.length;
 let slideWidth = 30;
 let slideMargin = 25;
 
-let mainSection = document.querySelector("#main-section");
 let mainText = document.querySelector(".main-text");
 let mainTitle = document.querySelector(".main-title");
 let whiteText = document.querySelector(".white-text");

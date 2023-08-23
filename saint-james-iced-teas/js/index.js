@@ -63,8 +63,53 @@ let currentIdx = 0;
 let slideCount = slide.length;
 
 //슬라이드 너비, 간격을 알아야 전체 길이를 알 수 있다.
-let slideWidth = 30;
-let slideMargin = 25;
+//뷰 너비가 768 이상이면 30/25
+//뷰 너비가 768 이하면 52/20
+let slideWidth, slideMargin;
+
+window.addEventListener("load", (event) => {
+  let clientWidthInit = document.documentElement.clientWidth;
+
+  // 768보다 큰 경우
+  if (clientWidthInit >= 768) {
+    // console.log("768보다 큼 - load");
+    slideWidth = 30;
+    slideMargin = 25;
+
+    // 576보다 크고 768보다 작은 경우
+  } else if (clientWidthInit < 768 && clientWidthInit >= 576) {
+    // console.log("768보다 작고 576보다 큼 - load");
+    slideWidth = 64;
+    slideMargin = 14;
+
+    //576보다 작은 경우
+  } else {
+    // console.log("576보다 작음 - load");
+    slideWidth = 50;
+    slideMargin = 10;
+  }
+  debugger;
+  makeClone();
+  updateWidth();
+});
+
+window.onresize = function (event) {
+  console.log("사이즈 변경");
+  let clientWidth = document.documentElement.clientWidth;
+  if (clientWidth >= 768) {
+    console.log("768보다 큼 - resize");
+    slideWidth = 30;
+    slideMargin = 25;
+  } else if (clientWidth < 768 && clientWidth >= 576) {
+    console.log("768보다 작고 576보다 큼 - resize");
+    slideWidth = 64;
+    slideMargin = 14;
+  } else {
+    console.log("576보다 작음 - resize");
+    slideWidth = 50;
+    slideMargin = 10;
+  }
+};
 
 let mainText = document.querySelector(".main-text");
 let mainTitle = document.querySelector(".main-title");
@@ -91,8 +136,6 @@ const greyTextArr = [
   "A CLEAN TAKE ON A CLASSIC",
 ];
 
-makeClone();
-
 /**
  * 복사본 만드는 함수
  * 슬라이드 개수에 따라서 5개를 복사본을 만들어서 앞, 뒤로 추가함
@@ -113,8 +156,6 @@ function makeClone() {
     slides.prepend(cloneSlide);
   }
 
-  updateWidth();
-
   //초기 위치 잡기
   setInitialPos();
 
@@ -130,6 +171,7 @@ function updateWidth() {
   // ( 너비 + 마진 ) * 전체 개수 - 마진
 
   //현재 슬라이드 요소를 새로 받아와야함!
+  debugger;
   let currentSlides = document.querySelectorAll(".slides li");
   let newSlideCount = currentSlides.length;
 

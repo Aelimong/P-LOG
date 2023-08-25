@@ -88,7 +88,6 @@ window.addEventListener("load", (event) => {
     slideWidth = 50;
     slideMargin = 10;
   }
-  debugger;
   makeClone();
   updateWidth();
 });
@@ -171,7 +170,6 @@ function updateWidth() {
   // ( 너비 + 마진 ) * 전체 개수 - 마진
 
   //현재 슬라이드 요소를 새로 받아와야함!
-  debugger;
   let currentSlides = document.querySelectorAll(".slides li");
   let newSlideCount = currentSlides.length;
 

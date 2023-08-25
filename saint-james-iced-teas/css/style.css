@@ -32,7 +32,49 @@ a {
   text-decoration: none;
 }
 
-#tooltip .circle {
+h1 {
+  font-family: "PPObjectSans-Heavy", sans-serif;
+  margin: 0;
+  font-size: 6.2rem;
+  color: #543939;
+  line-height: 5rem;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-family: "PPObjectSans-Heavy", sans-serif;
+  font-size: 4.2rem;
+  line-height: 4.4rem;
+  margin: 0;
+  color: #543939;
+  padding-bottom: 1.5rem;
+}
+
+h4 {
+  font-family: "PPObjectSans-medium", sans-serif;
+  font-size: 1.4em;
+  font-weight: 100;
+  margin: 0;
+  color: #543939;
+  line-height: 16.8px;
+  letter-spacing: 0;
+}
+
+p {
+  font-family: "Migra-Medium", sans-serif;
+  color: #543939;
+  font-size: 1.6em;
+  letter-spacing: 0.25px;
+  line-height: 18px;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* #tooltip .circle {
   position: fixed;
   top: 0;
   left: 0;
@@ -51,7 +93,7 @@ a {
   font-size: 1.4rem;
   font-weight: 100;
   font-family: "PPObjectSans-Medium", sans-serif;
-}
+} */
 
 header {
   width: 100%;
@@ -110,14 +152,11 @@ header .nav a {
 }
 
 header .nav a h4 {
-  font-size: 1.4rem;
-  font-family: "PPObjectSans-Medium", sans-serif;
-  font-weight: 100;
-  margin: 0;
   border: 1px solid #ffffff;
   padding: 1.5rem;
   border-radius: 0.375rem;
   margin: 0 14px;
+  color: #ffffff;
 }
 
 header .nav .nav-btn:hover {
@@ -140,7 +179,7 @@ main {
 }
 
 #main-section .main-text {
-  width: 50vw;
+  width: 60%;
   background-color: #5d9061;
   position: relative;
   top: 0;
@@ -150,7 +189,7 @@ main {
 }
 
 #main-section .main-text .main-title {
-  height: 85vh;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -159,24 +198,9 @@ main {
 .main-title.animated {
   transition: all 0.5s ease-in-out;
 }
-/* 
-@keyframes visualAnimation {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-} */
 
 #main-section .main-text .main-title h1 {
-  font-family: "PPObjectSans-Heavy", sans-serif;
-  font-size: 6.2rem;
-  line-height: 5rem;
   text-align: left;
-  margin: 0;
-  letter-spacing: -1px;
 }
 
 #main-section .main-text .main-title .white-text {
@@ -218,8 +242,7 @@ main {
 
 .slide-wrapper {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -302,11 +325,7 @@ main {
 }
 
 #section1 .sec1-left-2 h4 {
-  font-family: "PPObjectSans-medium", sans-serif;
-  color: #543939;
-  font-size: 1.4rem;
   margin: 0 0 14px 0;
-  font-weight: 100;
 }
 
 #section1 .sec1-left-2 p {
@@ -319,6 +338,38 @@ main {
 
 #section1 .sec1-right img {
   width: 30vw;
+}
+
+/* mobile section1 인 경우*/
+#mo-section1 {
+  display: none;
+  background-color: #f0e9df;
+  padding: 30px 30px 100px 30px;
+}
+
+#mo-section1 .mo-sec1-title {
+  padding-bottom: 30px;
+}
+
+#mo-section1 .mo-sec1-img {
+  padding: 30px 0px 30px 150px;
+}
+
+#mo-section1 .mo-sec1-img img {
+}
+
+#mo-section1 .mo-sec1-bottom {
+  width: 100%;
+  display: flex;
+}
+
+#mo-section1 .mo-sec1-bottom img {
+  padding-right: 30px;
+  width: 50%;
+}
+
+#mo-section1 .mo-sec1-bottom .mo-sec1-text h4 {
+  padding: 0 0 15px;
 }
 
 /* 섹션 2 */
@@ -336,19 +387,6 @@ main {
 
 #section2 .sec2-title1 {
   width: 60vw;
-}
-
-#section2 .sec2-title2 {
-  /* width: 115vw; */
-}
-
-#section2 .sec2-title1 h1 {
-  font-family: "PPObjectSans-Heavy", sans-serif;
-  margin: 0;
-  font-size: 6.2rem;
-  color: #543939;
-  line-height: 5rem;
-  letter-spacing: -1px;
 }
 
 #section2 .sec2-title1 a p i {
@@ -375,18 +413,16 @@ main {
   width: 100%;
 }
 
-#section2 .sec2-list .list-top {
+#section2 .sec2-list .sec2-list-top {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  /* background-color: green; */
 }
 
-#section2 .sec2-list .list-bottom {
+#section2 .sec2-list .sec2-list-bottom {
   display: flex;
-  width: 100%;
   justify-content: space-between;
-  /* background-color: blue; */
+  width: 100%;
 }
 
 #section2 .sec2-img {
@@ -396,6 +432,10 @@ main {
 
 #section2 .sec2-img img {
   width: 100%;
+}
+
+#section2 .sec2-img .sec2-img-el {
+  padding-bottom: 20px;
 }
 
 #section2 .sec2-img .sec2-img-el:hover img {
@@ -409,21 +449,13 @@ main {
 }
 
 #section2 .sec2-img h4 {
-  font-family: "PPObjectSans-medium", sans-serif;
-  font-size: 1.4rem;
   text-align: center;
-  color: #543939;
-  font-weight: 100;
   margin-bottom: 8px;
 }
 
 #section2 .sec2-img P {
-  font-family: "Migra-Medium", sans-serif;
-  font-size: 1.6rem;
   text-align: center;
   color: #543939;
-  font-weight: 100;
-  margin: 0;
 }
 
 #section2 .sec2-img .sec2-img-el {
@@ -464,22 +496,13 @@ main {
 }
 
 #section3 .sec3-title h4 {
-  font-family: "PPObjectSans-medium", sans-serif;
-  font-size: 1.4rem;
   text-align: left;
   color: #ffffff;
-  font-weight: 100;
   padding-bottom: 20px;
-  margin: 0;
 }
 
 #section3 .sec3-title h1 {
-  font-family: "PPObjectSans-Heavy", sans-serif;
-  margin: 0;
-  font-size: 6.2rem;
   color: #ffffff;
-  line-height: 5rem;
-  letter-spacing: -1px;
 }
 
 #section3 .sec3-img {
@@ -541,22 +564,8 @@ main {
 }
 
 #section4 h4 {
-  font-family: "PPObjectSans-medium", sans-serif;
-  font-size: 1.4rem;
   text-align: left;
-  color: #543939;
-  font-weight: 100;
   padding-bottom: 15px;
-  margin: 0;
-}
-
-#section4 h1 {
-  font-family: "PPObjectSans-Heavy", sans-serif;
-  margin: 0;
-  font-size: 6.2rem;
-  color: #543939;
-  line-height: 5rem;
-  letter-spacing: -1px;
 }
 
 #section4 h1 .gold-text {
@@ -580,13 +589,8 @@ main {
 }
 
 #section5 .sec5-text .sec5-text-top h4 {
-  font-family: "PPObjectSans-medium", sans-serif;
-  font-size: 1.4rem;
   text-align: left;
-  color: #543939;
-  font-weight: 100;
   padding-bottom: 15px;
-  margin: 0;
 }
 
 #section5 .sec5-text .sec5-text-top h2 {
@@ -603,13 +607,8 @@ main {
 }
 
 #section5 .sec5-text .sec5-text-bottom h4 {
-  font-family: "PPObjectSans-medium", sans-serif;
-  font-size: 1.4rem;
   text-align: left;
-  color: #543939;
-  font-weight: 100;
   padding-bottom: 15px;
-  margin: 0;
 }
 
 #section5 .sec5-text .sec5-text-bottom p {
@@ -684,12 +683,8 @@ main {
 }
 
 #footer .sec6-top ul li h4 {
-  font-family: "PPObjectSans-medium", sans-serif;
-  font-size: 1.4rem;
   text-align: center;
   color: #ffffff;
-  font-weight: 100;
-  margin: 0;
 }
 
 #footer .sec6-top ul li h4 a {
@@ -711,13 +706,9 @@ main {
 }
 
 #footer .sec6-middle h4 {
-  font-family: "PPObjectSans-medium", sans-serif;
-  font-size: 1.4rem;
   text-align: center;
   color: #ffffff;
-  font-weight: 100;
   padding-bottom: 15px;
-  margin: 0;
 }
 
 #footer .sec6-middle p {
@@ -759,9 +750,38 @@ main {
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   html {
-    font-size: 6px;
+    font-size: 9px;
+  }
+
+  h1 {
+    font-family: Object Sans Heavy, times new roman;
+    font-size: 3.8rem;
+    letter-spacing: 1px;
+    line-height: 34px;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 2.7rem;
+    letter-spacing: -0.5px;
+    line-height: 24px;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+    line-height: 14px;
+  }
+
+  p {
+    font-size: 1.4rem;
+    line-height: 16px;
+  }
+
+  header {
+    display: none;
   }
 
   #main-section {
@@ -794,9 +814,58 @@ main {
     width: 60vw;
   }
 
+  #section1 {
+    display: none;
+  }
+
   #section1 .sec1-left {
     padding-right: 30px;
     margin-right: 0;
+  }
+
+  #mo-section1 {
+    display: block;
+  }
+
+  #section2 .sec2-title1 {
+    width: 100%;
+  }
+
+  #section2 .sec2-title1 a p {
+    padding-top: 16px;
+  }
+
+  #section2 .sec2-list .sec2-list-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #section2 .sec2-list .sec2-list-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #section2 .sec2-img {
+    width: 100%;
+  }
+
+  /* top list 의 짝수요소*/
+  #section2 .sec2-list-top .sec2-img:nth-child(even) {
+    padding-left: 25%;
+  }
+
+  /* top list 의 홀수요소*/
+  #section2 .sec2-list-top .sec2-img:nth-child(odd) {
+    padding-right: 25%;
+  }
+
+  /* bottom list 의 짝수요소*/
+  #section2 .sec2-list-bottom .sec2-img:nth-child(even) {
+    padding-right: 25%;
+  }
+  /* bottom list 의 홀수요소*/
+  #section2 .sec2-list-bottom .sec2-img:nth-child(odd) {
+    padding-left: 25%;
   }
 
   #section5 .sec5-img img {
@@ -805,7 +874,7 @@ main {
   }
 }
 
-@media screen and (max-width: 576px) {
+/* @media screen and (max-width: 576px) {
   .slides li:not(:last-child) {
     margin-right: 10vw;
   }
@@ -813,4 +882,4 @@ main {
   .slides li {
     width: 50vw;
   }
-}
+} */

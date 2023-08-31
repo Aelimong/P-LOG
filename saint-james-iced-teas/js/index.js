@@ -1,18 +1,54 @@
 let mainSection = document.querySelector("#main-section");
+let footer = document.querySelector("#footer");
 
 let mainSecHeight = mainSection.clientHeight;
+let footerHeight = footer.clientHeight;
+let pageHeight = document.documentElement.scrollHeight;
+
+/* web */
 let nav = document.querySelector(".nav");
 let navHeight = nav.clientHeight;
 
+/* mobile */
+let moNav = document.querySelector("header.mo-header");
+let moNavHeight = moNav.clientHeight;
+
 document.addEventListener("scroll", () => {
-  //scrollY가 메인섹션 높이까지 올 때 헤더 스타일 변경!!
-  if (window.scrollY <= mainSecHeight) {
+  // scrollY가 메인섹션 높이까지 올 때 헤더 스타일 변경!!
+  // 전체 높이 - 푸터
+  // console.log("1. 메인섹션 : " + mainSecHeight);
+  // console.log("2. 푸터 높이 : " + footerHeight);
+  // console.log("3. 메뉴 : " + navHeight);
+  // console.log("4. 불투명 높이 : " + (pageHeight - footerHeight));
+  // console.log("5. 현재 스크롤 : " + window.scrollY);
+
+  //1. 푸터
+  if (window.scrollY >= pageHeight - footerHeight) {
+    nav.setAttribute(
+      "style",
+      "background-color: rgba(84, 57, 57, 0.25); backdrop-filter: blur(25px);"
+    );
+    moNav.setAttribute(
+      "style",
+      "background-color: rgba(84, 57, 57, 0.25); backdrop-filter: blur(25px);"
+    );
+    // 2. 메인 섹션
+  } else if (window.scrollY < mainSecHeight) {
     nav.setAttribute(
       "style",
       "background-color: transparent; backdrop-filter: blur(0px);"
     );
+    moNav.setAttribute(
+      "style",
+      "background-color: transparent; backdrop-filter: blur(0px);"
+    );
+    // 3. 나머지
   } else {
     nav.setAttribute(
+      "style",
+      "background-color: rgba(84, 57, 57, 0.25); backdrop-filter: blur(25px);"
+    );
+    moNav.setAttribute(
       "style",
       "background-color: rgba(84, 57, 57, 0.25); backdrop-filter: blur(25px);"
     );
@@ -23,35 +59,35 @@ document.addEventListener("scroll", () => {
 
 let circle = document.querySelector(".circle");
 
-mainSection.addEventListener("mousemove", (e) => {
-  //마우스 좌표
-  const mouseX = e.clientX;
-  const mouseY = e.clientY;
-  circle.style.left = mouseX + "px";
-  circle.style.top = mouseY + "px";
+// mainSection.addEventListener("mousemove", (e) => {
+//   //마우스 좌표
+//   const mouseX = e.clientX;
+//   const mouseY = e.clientY;
+//   circle.style.left = mouseX + "px";
+//   circle.style.top = mouseY + "px";
 
-  // 마우스 브라우저 기준 Y 좌표
-  let pageY = e.pageY;
+//   // 마우스 브라우저 기준 Y 좌표
+//   let pageY = e.pageY;
 
-  //1. 써클 div 만들고
-  const circleDiv = document.createElement("div");
-  circleDiv.classList.add("circle");
-  circleDiv.innerText = "CLICK";
+//   //1. 써클 div 만들고
+//   const circleDiv = document.createElement("div");
+//   circleDiv.classList.add("circle");
+//   circleDiv.innerText = "CLICK";
 
-  // 2. append를 한 번만...??
-  let slideWrapper = document.querySelector(".slide-wrapper");
-  slideWrapper.appendChild(circleDiv);
-  //console.log(pageY); //계
-  //console.log(navHeight); //78
+//   // 2. append를 한 번만...??
+//   let slideWrapper = document.querySelector(".slide-wrapper");
+//   slideWrapper.appendChild(circleDiv);
+//   //console.log(pageY); //계
+//   //console.log(navHeight); //78
 
-  //메인 섹션 안에서만 보이고
-  if (pageY >= navHeight && pageY <= mainSecHeight) {
-    circle.style.opacity = "1";
-  } else {
-    // circle.style.scale = "1.1";
-    circle.style.opacity = "0";
-  }
-});
+//   //메인 섹션 안에서만 보이고
+//   if (pageY >= navHeight && pageY <= mainSecHeight) {
+//     circle.style.opacity = "1";
+//   } else {
+//     // circle.style.scale = "1.1";
+//     circle.style.opacity = "0";
+//   }
+// });
 
 let slides = document.querySelector(".slides");
 let slide = document.querySelectorAll(".slides li");
@@ -63,30 +99,30 @@ let currentIdx = 0;
 let slideCount = slide.length;
 
 //슬라이드 너비, 간격을 알아야 전체 길이를 알 수 있다.
-//뷰 너비가 768 이상이면 30/25
-//뷰 너비가 768 이하면 52/20
-let slideWidth, slideMargin;
+let slideWidth;
+let slideMargin;
 
 window.addEventListener("load", (event) => {
+  console.log("슬라이드 이미지 너비 : " + slideWidth);
   let clientWidthInit = document.documentElement.clientWidth;
 
   // 768보다 큰 경우
   if (clientWidthInit >= 768) {
     // console.log("768보다 큼 - load");
-    slideWidth = 30;
+    slideWidth = 35;
     slideMargin = 25;
 
     // 576보다 크고 768보다 작은 경우
   } else if (clientWidthInit < 768 && clientWidthInit >= 576) {
     // console.log("768보다 작고 576보다 큼 - load");
-    slideWidth = 64;
-    slideMargin = 14;
+    slideWidth = 35;
+    slideMargin = 25;
 
     //576보다 작은 경우
   } else {
     // console.log("576보다 작음 - load");
-    slideWidth = 50;
-    slideMargin = 10;
+    slideWidth = 60;
+    slideMargin = 14;
   }
   makeClone();
   updateWidth();
@@ -96,17 +132,17 @@ window.onresize = function (event) {
   console.log("사이즈 변경");
   let clientWidth = document.documentElement.clientWidth;
   if (clientWidth >= 768) {
-    console.log("768보다 큼 - resize");
-    slideWidth = 30;
+    // console.log("768보다 큼 - resize");
+    slideWidth = 35;
     slideMargin = 25;
   } else if (clientWidth < 768 && clientWidth >= 576) {
-    console.log("768보다 작고 576보다 큼 - resize");
-    slideWidth = 64;
-    slideMargin = 14;
+    // console.log("768보다 작고 576보다 큼 - resize");
+    slideWidth = 35;
+    slideMargin = 25;
   } else {
-    console.log("576보다 작음 - resize");
-    slideWidth = 50;
-    slideMargin = 10;
+    // console.log("576보다 작음 - resize");
+    slideWidth = 60;
+    slideMargin = 14;
   }
 };
 
@@ -226,7 +262,74 @@ function changeBackColor(currentIdx) {
 
 // 텍스트 변경
 function changeMainText(currentIdx) {
-  console.log(typeof whiteTextArr[currentIdx]);
   whiteText.innerText = whiteTextArr[currentIdx];
   greyText.innerText = greyTextArr[currentIdx];
+}
+
+// 모바일 메뉴 열기
+const moHeader = document.querySelector(".mo-nav");
+const openIcon = document.querySelector(".open-icon");
+const closeIcon = document.querySelector(".close-icon");
+const drawer = document.querySelector(".drawer");
+const backDrop = document.querySelector(".back-drop");
+
+openIcon.addEventListener("click", openMenu);
+closeIcon.addEventListener("click", closeMenu);
+backDrop.addEventListener("click", closeMenu);
+
+// 메뉴 펼칠 때
+function openMenu() {
+  //슬라이드 메인으로
+  if (moHeader.classList.contains("slide-to-side")) {
+    moHeader.classList.remove("slide-to-side");
+  }
+
+  moHeader.classList.add("slide-to-main");
+
+  //drawer 보이게
+  // if (drawer.classList.contains("hide")) {
+  //   drawer.classList.remove("hide");
+  // }
+  // drawer.classList.add("show");
+
+  // backdrop 보이게
+  if (backDrop.classList.contains("hide")) {
+    backDrop.classList.remove("hide");
+  }
+
+  backDrop.classList.add("show");
+  let backDropHeight = document.documentElement.scrollHeight;
+  backDrop.setAttribute("style", `height: ${backDropHeight}px`);
+
+  // 햄버거 메뉴 안 보이게
+  if (openIcon.classList.contains("show")) {
+    openIcon.classList.remove("show");
+  }
+  openIcon.classList.add("hide");
+  openIcon.setAttribute("style", "opacity: 0");
+}
+
+// 메뉴 닫기
+function closeMenu() {
+  //슬라이드 사이드로
+  if (moHeader.classList.contains("slide-to-main")) {
+    moHeader.classList.remove("slide-to-main");
+  }
+
+  moHeader.classList.add("slide-to-side");
+
+  // backdrop 안 보이게
+  if (backDrop.classList.contains("show")) {
+    backDrop.classList.remove("show");
+  }
+
+  backDrop.classList.add("hide");
+  backDrop.setAttribute("style", `height: 0`);
+
+  // 햄버거 메뉴 보이게
+  if (openIcon.classList.contains("hide")) {
+    openIcon.classList.remove("hide");
+  }
+  openIcon.classList.add("show");
+  openIcon.setAttribute("style", "opacity: 1");
 }
